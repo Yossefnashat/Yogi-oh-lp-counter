@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Yogi Oh LP Counter</title>
+
+    <link rel="stylesheet" href="Yogi.css">
+
+</head>
+<body>
+
+        <div class="container" id="container">
+    
+            <div class="bar" id="bar">
+    
+                <div style="position: absolute;">
+                    <button class="back" id="back" onclick="get_back()" >BACK</button>
+                </div>
+    
+                <div style="display: flex; justify-content: end;">
+                    <button class="mode" id="mode" onclick="set_mode()">MODE</button>
+                </div>
+    
+            </div>
+    
+            <div class="hello" id="hello">
+                <h1>Yogi Oh LP</h1>
+                <p>Ready to duel ?</p>
+                <button class="play"  onclick="start_playing() , show_lp_setting_list()">PLAY</button>
+            </div>
+    
+            <div class="lp_setting" id="lp_setting">
+                <h1 style="margin-bottom: 10px;">select life points</h1>
+                <button onclick="set_lp_setting(8000) , show_players_list()" >8000</button>
+                <button onclick="set_lp_setting(4000) , show_players_list() " >4000</button>
+            </div>
+    
+            <div class="players_list" id="players_list">
+                <h1 style="margin-bottom:10px;">How many players</h1>
+                <button class="blue_player_btn" onclick="show_blue_player()" >BLUE PLAYER</button>
+                <button class="red_player" onclick="show_red_player()" ><span>RED PLAYER</span></button>
+                <button class="2player" onclick="show_blue_2_player() , show_red_2_player() "><span>2</span> PLAYERS</button>
+                <button class="4player" onclick="show_blue_4_1_player() , show_red_4_1_player() , show_blue_4_2_player() , show_red_4_2_player() " ><span>4</span> PLAYERS</button>
+            </div>
+    
+            <div class="players" id="players">
+    
+                <div class="blue_player" id="blue_player">
+                    <h2 id="blue_player_lp" ></h2>
+                    <input type="number" class="increase_blue_player" id="increase_blue_player_lp" class="increase">
+                    <input type="number" class="reduse_blue_player" id="reduse_blue_player_lp" class="reduse">
+                    <button class="confirm_blue_player" onclick="change_lp(blue_player_lp , increase_blue_player_lp , reduse_blue_player_lp)">Confirm</button>
+                </div>
+    
+                <div class="red_player" id="red_player">
+                    <h2 id="red_player_lp" ></h2>
+                    <input type="number" class="increase_red_player" id="increase_red_player_lp" >
+                    <input type="number" class="reduse_red_player" id="reduse_red_player_lp">
+                    <button class="confirm_red_player" onclick="change_lp(red_player_lp , increase_red_player_lp , reduse_red_player_lp)">Confirm</button>
+                </div>
+    
+                <div class="players_2" id="players_2">
+                    <div class="blue_2_player" id="blue_2_player">
+                        <h2 id="blue_2_player_lp" ></h2>
+                        <input type="number" id="increase_blue_2_player_lp" class="increase">
+                        <input type="number"  id="reduse_blue_2_player_lp" class="reduse">
+                        <button class="confirm" onclick="change_lp(blue_2_player_lp , increase_blue_2_player_lp , reduse_blue_2_player_lp)">Confirm</button>
+                    </div>
+    
+                    <div class="red_2_player" id="red_2_player">
+                        <h2 id="red_2_player_lp" ></h2>
+                        <input type="number" id="increase_red_2_player_lp" class="increase">
+                        <input type="number"  id="reduse_red_2_player_lp" class="reduse">
+                        <button class="confirm" onclick="change_lp(red_2_player_lp , increase_red_2_player_lp , reduse_red_2_player_lp)">Confirm</button>
+                    </div>
+    
+                </div>
+    
+                <div class="players_4" id="players_4">
+    
+                    <div class="blue_4_1_player" id="blue_4_1_player">
+                        <h2 id="blue_4_1_player_lp" ></h2>
+                        <input type="number" id="increase_blue_4_1_player_lp" class="increase">
+                        <input type="number"  id="reduse_blue_4_1_player_lp" class="reduse">
+                        <button class="confirm" onclick="change_lp(blue_4_1_player_lp , increase_blue_4_1_player_lp , reduse_blue_4_1_player_lp)">Confirm</button>
+                    </div>
+    
+                    <div class="red_4_1_player" id="red_4_1_player">
+                        <h2 id="red_4_1_player_lp" ></h2>
+                        <input type="number" id="increase_red_4_1_player_lp" class="increase">
+                        <input type="number"  id="reduse_red_4_1_player_lp" class="reduse">
+                        <button class="confirm" onclick="change_lp(red_4_1_player_lp , increase_red_4_1_player_lp , reduse_red_4_1_player_lp)">Confirm</button>
+                    </div>
+    
+                    <div class="blue_4_2_player" id="blue_4_2_player">
+                        <h2 id="blue_4_2_player_lp" ></h2>
+                        <input type="number" id="increase_blue_4_2_player_lp" class="increase">
+                        <input type="number"  id="reduse_blue_4_2_player_lp" class="reduse">
+                        <button class="confirm" onclick="change_lp(blue_4_2_player_lp , increase_blue_4_2_player_lp , reduse_blue_4_2_player_lp)">Confirm</button>
+                    </div>
+    
+                    <div class="red_4_2_player" id="red_4_2_player">
+                        <h2 id="red_4_2_player_lp" ></h2>
+                        <input type="number" id="increase_red_4_2_player_lp" class="increase">
+                        <input type="number"  id="reduse_red_4_2_player_lp" class="reduse">
+                        <button class="confirm" onclick="change_lp(red_4_2_player_lp , increase_red_4_2_player_lp , reduse_red_4_2_player_lp)">Confirm</button>
+                    </div>
+    
+                </div>
+    
+            </div>
+        
+        </div>
+</body>
+<script src="Yogi.js" ></script>
+</html>
